@@ -46,3 +46,27 @@ let isArray;
 let creditCardTypeOfBlindermann;
 let productQuantityOfJoannet;
 let totalPurchaseOfDary;
+
+isArray = Array.isArray(orders);
+//console.log(isArray);
+
+//console.log(orders[2].customerName == "Toinette Blindermann");
+creditCardTypeOfBlindermann = orders[2].creditCardType;
+// console.log(creditCardTypeOfBlindermann);
+
+orders[2].creditCardType = "visa";
+// console.log(orders[2].creditCardType);
+
+// console.log(orders.filter((x) => x.customerName == "Anjela Joannet"));
+productQuantityOfJoannet = orders.filter(
+  (x) => x.customerName == "Anjela Joannet"
+)[0].productQuantity;
+console.log(productQuantityOfJoannet);
+
+let celia = orders.filter((x) => x.customerName == "Celia Dary")[0];
+totalPurchaseOfDary = celia.productPrice * celia.productQuantity;
+console.log(totalPurchaseOfDary);
+
+orders.shift();
+
+console.log(orders);
